@@ -1,5 +1,5 @@
 import Timer from "./components/Timer";
-import Callback from "./components/hooks/Callback";
+import Callback, { ListComponent } from "./components/hooks/Callback";
 import { ListData } from "./components/hooks/Memo";
 import Ref from "./components/hooks/Ref";
 
@@ -9,6 +9,7 @@ function App() {
       <Timer/>
       <Ref/>
       <Callback/>
+      <ListComponent/>
       <ListData/>
       
     </div>

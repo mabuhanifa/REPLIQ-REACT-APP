@@ -14,3 +14,20 @@ export default function Callback() {
     </div>
   );
 }
+
+export function ListComponent() {
+    const items = [1, 2, 3, 4, 5];
+  
+    const renderItem = useCallback(
+      (item, index) => (
+        <li key={index}>{item}</li>
+      ),
+      []
+    );
+  
+    return (
+      <ul>
+        {items.map(renderItem)}
+      </ul>
+    );
+  }
