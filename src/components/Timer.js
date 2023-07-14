@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 
 export default function Timer() {
-  const [timeLeft, setTimeLeft] = useState(3000);
+  const [timeLeft, setTimeLeft] = useState(30000);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(0);
-    }, 3000);
-
+    const timer = setInterval(() => {
+      setTimeLeft(timeLeft - 1000);
+    }, 1000);
+    
     return () => {
       // Clear the timer when the component unmounts.
-      clearTimeout(timer);
+      clearInterval(timer);
     };
-  }, []);
+    
+  }, [timeLeft]);
   return (
     <div>
-      <h1>Time left: {timeLeft}</h1>
+      <h1>Time left: {timeLeft/1000} seconds</h1>
     </div>
   );
 }
